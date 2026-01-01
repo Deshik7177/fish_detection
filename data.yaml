@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 26
+names: ['Acanthuridae -Surgeonfishes-', 'Balistidae -Triggerfishes-', 'Carangidae -Jacks-', 'Ephippidae -Spadefishes-', 'Labridae -Wrasse-', 'Lutjanidae -Snappers-', 'Pomacanthidae -Angelfishes-', 'Pomacentridae -Damselfishes-', 'Scaridae -Parrotfishes-', 'Scombridae -Tunas-', 'Serranidae -Groupers-', 'Shark -Selachimorpha-', 'Zanclidae (Moorish Idol)', 'Zanclidae -Moorish Idol-', 'angel', 'damsel', 'grouper', 'jack', 'parrot', 'shark', 'snapper', 'spade', 'surgeon', 'trigger', 'tuna', 'wrasse']
+
+roboflow:
+  workspace: roboflow-gw7yv
+  project: fish-yzfml
+  version: 1
+  license: Public Domain
+  url: https://universe.roboflow.com/roboflow-gw7yv/fish-yzfml/dataset/1

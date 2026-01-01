@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Fish Detection System</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="container">
+    <h1>🐟 Fish Detection System</h1>
+    <p class="subtitle">AI-powered underwater species detection</p>
+
+    <form action="/predict" method="post" enctype="multipart/form-data" class="upload-box">
+        <input type="file" name="file" accept="image/*" required>
+        <button type="submit">Detect Fish</button>
+    </form>
+
+    {% if original and detected %}
+    <div class="main-grid">
+
+        <!-- LEFT: ORIGINAL IMAGE -->
+        <div class="card">
+            <h3>Original Image</h3>
+            <img src="{{ original }}">
+        </div>
+
+        <!-- CENTER: DETECTED IMAGE -->
+        <div class="card">
+            <h3>Detected Image</h3>
+            <img src="{{ detected }}">
+        </div>
+
+        <!-- RIGHT: INFO PANEL -->
+        <div class="info-panel">
+            <h3 class="section-title">Detected Fish</h3>
+
+            {% if species %}
+                <div class="detected-main">
+                    {{ species[0] }}
+                </div>
+            {% else %}
+                <div class="detected-main none">No fish detected</div>
+            {% endif %}
+
+            <h4 class="section-title small">This system can detect</h4>
+            <div class="badge-container">
+                {% for s in all_species %}
+                    <span class="badge">{{ s }}</span>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+    {% endif %}
+</div>
+
+</body>
+</html>
