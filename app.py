@@ -57,7 +57,6 @@ async def predict(request: Request, file: UploadFile = File(...)):
     with open(input_path, "wb") as f:
         f.write(await file.read())
 
-    # ---------- RESOURCE UTILIZATION ----------
     cpu_usage = psutil.cpu_percent(interval=0.2)
     memory_usage = psutil.Process(os.getpid()).memory_info().rss / (1024 * 1024)
 
